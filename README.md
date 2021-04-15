@@ -1,0 +1,8 @@
+<h1>Blank Raspberry Pi PICO project folder</h1>
+<br>
+<h3>with a project folder generator</h3>
+<hr>
+<p>I have one PICO SDK install on a laptop that worked right out of the box. Yet, the install on this laptop didn't work out.  In addition, I wanted to have as much automation as I could, without using those built by others.  I understand mine better.</p>
+<p>So, this is my answer.  I run on Linux Mint and when I installed CMake, I discovered I could INSTALL the correct version needed if I used "snap" to install CMake.  However, I had a lot of trouble making it work.  I discovered that snap placed cmake and all its folders in /usr (/usr/bin and /usr/share).  This makes it require sudo in order to function. So, where you should be able to use "cmake .." to configure the project for build, I have to use "sudo cmake ..".  Thus, root doesn't have access to my environment variables.  To solve the problem and make it less cumbersome, I wrote "mycmake.sh" that handles everything.</p>
+<p>This folder contains useable, but very basic files for the source (.c file), CMakeLists.txt (your build configuration file for CMake), plus "mycmake.sh" and the PICO SDK include file (pico_sdk_imprt.cmake).  pico-gen-project copies all these over to a new project folder that you can alter to do your project, but without having to remember everything needed.  These are the base minimum things required to build a C or C++ UF2 file for your PICO.</p>
+<p>As always, remember, use this at your own discretion and risk.</p>
